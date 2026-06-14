@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victory Living Word Church | Kawanda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --purple: #4a1d6d;
+            --purple-dark: #3a1558;
+            --purple-light: #7b3f9e;
+            --gold: #D4AF37;
+            --gold-light: #F5E6AB;
+            --gold-dark: #B7950B;
+            --green: #2b7a3e;
+            --green-dark: #1e5c2e;
+            --white: #FFFFFF;
+            --off-white: #F9F9F9;
+            --black: #333333;
+            --gray: #383838;
+            --light-gray: #EEEEEE;
+            
+            --header-font: 'Merriweather', serif;
+            --body-font: 'Open Sans', sans-serif;
+            
+            --transition: all 0.3s ease;
+            --shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 5px 20px rgba(0, 0, 0, 0.12);
+            --border-radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: var(--body-font);
+            background-color: var(--off-white);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: var(--header-font);
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--purple-dark);
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--purple-dark);
+            padding: 0.6rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            color: var(--white);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold-dark);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--purple-dark);
+        }
+        
+        .btn-purple {
+            background: linear-gradient(135deg, var(--purple), var(--purple-light));
+            color: var(--white);
+        }
+        
+        .btn-purple:hover {
+            background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+            color: var(--white);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--purple-dark);
+            padding: 0.75rem 0;
+            z-index: 1000;
+            transition: var(--transition);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .nav-logo img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gold);
+        }
+        
+        .nav-logo-text {
+            font-family: var(--header-font);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--white);
+            line-height: 1.2;
+        }
+        
+        .nav-logo-text span {
+            color: var(--gold);
+            display: block;
+            font-size: 0.7rem;
+            font-family: var(--body-font);
+            font-weight: 400;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.4rem 0;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after,
+        .nav-links a.active:after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+        
+        .nav-cta {
+            background: var(--gold);
+            color: var(--purple-dark) !important;
+            padding: 0.5rem 1.25rem !important;
+            border-radius: var(--border-radius);
+            font-weight: 700 !important;
+        }
+        
+        .nav-cta:hover {
+            background: var(--gold-dark) !important;
+            color: var(--white) !important;
+        }
+        
+        .nav-cta:after {
+            display: none !important;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: var(--white);
+            font-size: 1.25rem;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            height: 60vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                        url('https://i.pinimg.com/1200x/5e/1d/03/5e1d03d04fa58bc45c76173b50a5d347.jpg') no-repeat center center/cover;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            margin-top: 0;
+            padding-top: 60px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-section h1 {
+            color: var(--white);
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hero-tagline {
+            color: var(--gold-light);
+            font-size: 1rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hero-description {
+            color: var(--white);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        
+        /* Welcome Section */
+        .welcome-section {
+            background-color: var(--white);
+        }
+        
+        .welcome-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .welcome-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .welcome-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        
+        .welcome-content h2 {
+            text-align: left;
+            margin: 0 0 1.5rem;
+        }
+        
+        .welcome-content h2:after {
+            margin: 0.5rem 0;
+        }
+        
+        .bible-verse {
+            font-family: var(--header-font);
+            font-style: italic;
+            color: var(--gold-dark);
+            font-size: 1rem;
+            margin: 1.5rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid var(--gold);
+        }
+        
+        /* Services Section */
+        .services-section {
+            background-color: var(--off-white);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--purple);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-time {
+            display: inline-block;
+            background: var(--purple-light);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .service-time.secondary {
+            margin-left: 0.5rem;
+            background: var(--green);
+        }
+        
+        /* Ministries Section */
+        .ministries-section {
+            background-color: var(--white);
+        }
+        
+        .ministries-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .ministry-card {
+            background: var(--off-white);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        
+        .ministry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .ministry-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--gold);
+        }
+        
+        .ministry-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .ministry-age {
+            display: inline-block;
+            background: var(--purple-light);
+            color: var(--white);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Youth Section */
+        .youth-section {
+            background-color: var(--purple-dark);
+            color: var(--white);
+        }
+        
+        .youth-section h2 {
+            color: var(--gold-light);
+        }
+        
+        .youth-section h2:after {
+            background: var(--gold);
+        }
+        
+        .youth-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .youth-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .youth-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        
+        .youth-content h2 {
+            text-align: left;
+            margin: 0 0 1.5rem;
+            color: var(--gold-light);
+        }
+        
+        .youth-content h2:after {
+            margin: 0.5rem 0;
+        }
+        
+        .youth-content p {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .youth-content .btn {
+            margin-top: 1rem;
+        }
+        
+        /* Quote Section */
+        .quote-section {
+            background-color: var(--white);
+        }
+        
+        .quote-card {
+            background: var(--off-white);
+            border-radius: var(--border-radius);
+            padding: 3rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--gold);
+        }
+        
+        .quote-card p {
+            font-family: var(--header-font);
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--purple-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .quote-card footer {
+            font-weight: 700;
+            color: var(--gold-dark);
+            font-size: 0.95rem;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            background-color: var(--off-white);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .gallery-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 1rem;
+            color: var(--white);
+            transform: translateY(100%);
+            transition: var(--transition);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Support Section */
+        .support-section {
+            background-color: var(--white);
+        }
+        
+        .support-card {
+            background: var(--off-white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            align-items: stretch;
+        }
+        
+        .support-column {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .support-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            text-align: left;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .support-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .support-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .support-icon {
+            font-size: 1.5rem;
+            color: var(--purple-dark);
+            min-width: 45px;
+            height: 45px;
+            background: var(--gold-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .support-header h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--purple-dark);
+        }
+        
+        .contact-info {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--purple-dark);
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: var(--gold-light);
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .contact-info.small {
+            font-size: 0.95rem;
+            background: transparent;
+            padding: 0;
+            text-align: left;
+        }
+        
+        .payment-codes {
+            display: flex;
+            gap: 0.75rem;
+            margin: 0.75rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .payment-code {
+            background: var(--purple-light);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            font-family: monospace;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .bible-verse-line {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--gold-light);
+            font-style: italic;
+            color: var(--gray);
+            font-size: 1rem;
+            font-family: var(--header-font);
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--purple-dark);
+            color: var(--white);
+            padding: 2rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-column h3 {
+            color: var(--gold);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 35px;
+            height: 2px;
+            background-color: var(--gold);
+        }
+        
+        .footer-column p,
+        .footer-column a {
+            color: var(--white);
+            opacity: 0.8;
+            transition: var(--transition);
+            margin-bottom: 0.4rem;
+            display: block;
+            font-size: 0.85rem;
+        }
+        
+        .footer-column a:hover {
+            opacity: 1;
+            color: var(--gold);
+            padding-left: 3px;
+        }
+        
+        .footer-column i {
+            margin-right: 0.5rem;
+            color: var(--gold);
+            width: 14px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .social-link {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--gold);
+            color: var(--purple-dark);
+            transform: translateY(-2px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white) !important;
+            opacity: 0.9;
+            font-size: 0.8rem;
+        }
+        
+        .copyright p {
+            color: var(--white) !important;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .support-grid,
+            .gallery-grid,
+            .services-grid,
+            .ministries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero-section {
+                height: 60vh;
+                min-height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 60px);
+                background-color: var(--purple-dark);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                transition: var(--transition);
+                padding: 1.5rem 0;
+                overflow-y: auto;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 0.6rem 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 0.8rem 1rem;
+                font-size: 1rem;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .welcome-grid,
+            .youth-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .welcome-content h2,
+            .youth-content h2 {
+                text-align: center;
+            }
+            
+            .welcome-content h2:after,
+            .youth-content h2:after {
+                margin: 0.5rem auto;
+            }
+            
+            .hero-btns {
+                flex-wrap: wrap;
+            }
+            
+            .hero-btns .btn {
+                flex: 0 0 calc(50% - 0.5rem);
+                max-width: calc(50% - 0.5rem);
+                text-align: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .footer-content {
+                gap: 1rem;
+            }
+            
+            .hero-section {
+                height: auto;
+                min-height: 50vh;
+                padding: 70px 0 2rem;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+            
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 650px) {
+            .support-grid,
+            .gallery-grid,
+            .services-grid,
+            .ministries-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                flex: 0 0 100%;
+                max-width: 250px;
+                margin-bottom: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            section {
+                padding: 2rem 0;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+                margin: 1.5rem 0 1rem;
+            }
+            
+            .support-grid,
+            .gallery-grid,
+            .services-grid,
+            .ministries-grid {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .hero-section {
+                height: auto;
+                min-height: 50vh;
+                padding: 70px 0 2rem;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.7rem;
+            }
+            
+            .footer-column {
+                margin-bottom: 0.5rem;
+            }
+            
+            .welcome-image img,
+            .youth-image img {
+                height: 250px;
+            }
+            
+            .service-card,
+            .ministry-card,
+            .support-item {
+                padding: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .container {
+                padding: 0 0.75rem;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-tagline {
+                font-size: 0.95rem;
+            }
+            
+            .hero-description {
+                font-size: 0.95rem;
+            }
+            
+            .hero-btns .btn {
+                padding: 0.7rem 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .service-card,
+            .ministry-card,
+            .support-item {
+                padding: 1rem;
+            }
+            
+            .footer-column {
+                padding: 0 0.5rem;
+            }
+            
+            .welcome-image img,
+            .youth-image img {
+                height: 200px;
+            }
+            
+            .gallery-item {
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/256740218296?text=Hello%20Victory%20Living%20Word%20Church%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container container">
+            <a href="#" class="nav-logo">
+                <img src="1.jpeg" alt="VLWC Logo">
+                <div class="nav-logo-text">
+                    Victory Living Word
+                    <span>Kawanda | Rev 12:11</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#ministries">Ministries</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact" class="nav-cta">Connect</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Victory Living Word Church</h1>
+                <p class="hero-tagline">Transforming Lives Through the Word of God</p>
+                <p class="hero-description">A vibrant, Spirit-filled ministry in Kawanda, Uganda — raising ministers, spreading the Gospel, and serving our community under the leadership of Pastor Kitondekigya Richard.</p>
+                <div class="hero-btns">
+                    <a href="#services" class="btn">Join Us This Sunday</a>
+                    <a href="#about" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Welcome / About Section -->
+    <section id="about" class="welcome-section">
+        <div class="container">
+            <div class="welcome-grid">
+                <div class="welcome-image">
+                    <img src="1.jpeg" alt="Pastor Kitondekigya Richard">
+                </div>
+                <div class="welcome-content">
+                    <h2>Welcome to Victory Living Word Church</h2>
+                    <p>Victory Living Word Church is a dynamic, Word-based ministry located in Kawanda, Uganda. Under the leadership of <strong>Pastor Kitondekigya Richard</strong> and his family, we are committed to transforming lives through the unfailing Word of our Lord Jesus Christ.</p>
+                    
+                    <p class="bible-verse">"And they overcame him by the blood of the Lamb, and by the word of their testimony..." — Revelation 12:11</p>
+                    
+                    <p>Our mission is clear: to raise ministers, equip believers, and spread the Gospel to Kawanda and beyond. We believe in the power of prayer, the authority of Scripture, and the transformative work of the Holy Spirit. Whether you are seeking spiritual growth, healing, or a community of faith, you have a place here.</p>
+                    
+                    <a href="#services" class="btn btn-purple">Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Join Us For Worship</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 1rem;">
+                Experience powerful, Spirit-filled services designed to uplift, equip, and transform.
+            </p>
+            
+            <div class="services-grid">
+                <!-- Sunday Worship -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://i.pinimg.com/1200x/66/3e/14/663e1495a77ec8cbc1f5c467e859f83c.jpg" alt="Sunday Worship">
+                    </div>
+                    <div class="service-content">
+                        <div>
+                            <span class="service-time">7:00 AM - 1:00 PM</span>
+                        </div>
+                        <h3>Sunday Worship Service</h3>
+                        <p>Our main weekly gathering featuring powerful praise and worship, deep revelation from God's Word, and holy communion. Come expectant for a divine encounter.</p>
+                        <a href="#contact" class="btn btn-outline">Service Details</a>
+                    </div>
+                </div>
+                
+                <!-- Wednesday Bible Study -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://i.pinimg.com/736x/8f/38/40/8f38405d391a1f5d25f1bc443d9d5c2f.jpg" alt="Bible Study">
+                    </div>
+                    <div class="service-content">
+                        <span class="service-time secondary">5:00 PM - 7:00 PM</span>
+                        <h3>Wednesday Bible Study</h3>
+                        <p>Midweek spiritual nourishment. Dive deep into the Scriptures with interactive study and discussion. A time of refreshing and equipping for every believer.</p>
+                        <a href="#contact" class="btn btn-outline">Join Study</a>
+                    </div>
+                </div>
+                
+                <!-- Night of Victory -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://i.pinimg.com/736x/ae/f4/23/aef423ee3803d701c54f1d4e8ff381cb.jpg" alt="Night of Victory">
+                    </div>
+                    <div class="service-content">
+                        <span class="service-time">Monthly Event</span>
+                        <h3>Night of Victory & Prophetic Fire</h3>
+                        <p>An explosive night of prophetic worship, prayer, and the miraculous. When you pray, you speak to God — and He answers with fire. Stay tuned for upcoming dates.</p>
+                        <a href="#contact" class="btn btn-outline">Stay Updated</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ministries Section -->
+    <section id="ministries" class="ministries-section">
+        <div class="container">
+            <h2>Find Your Place</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 1rem;">
+                Connect with others through ministries designed for every member of the family.
+            </p>
+            
+            <div class="ministries-grid">
+                <div class="ministry-card">
+                    <div class="ministry-image">
+                        <img src="https://i.pinimg.com/1200x/cf/9b/1d/cf9b1dfd5e0ec1fec384225bdb52502a.jpg" alt="Children Ministry">
+                    </div>
+                    <span class="ministry-age">Ages 3-12</span>
+                    <h3>Children</h3>
+                    <p>Fun, engaging programs teaching kids about Jesus through games, songs, and Bible stories.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="ministry-card">
+                    <div class="ministry-image">
+                        <img src="https://i.pinimg.com/1200x/4a/10/c1/4a10c1f57f57a3ab09af9ec74adb73bb.jpg" alt="Youth Ministry">
+                    </div>
+                    <span class="ministry-age">Ages 13-25</span>
+                    <h3>Youth</h3>
+                    <p>Dynamic gatherings with relevant teaching, worship, games, and mentorship for young people.</p>
+                    <a href="#youth" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="ministry-card">
+                    <div class="ministry-image">
+                        <img src="https://i.pinimg.com/1200x/df/de/1c/dfde1ca030b97264b9dfab5c28f70779.jpg" alt="Women Ministry">
+                    </div>
+                    <h3>Women</h3>
+                    <p>Sisterhood growing together in faith through Bible study, prayer, and mutual encouragement.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="ministry-card">
+                    <div class="ministry-image">
+                        <img src="https://i.pinimg.com/736x/82/eb/4f/82eb4f264a836133d839088f8d0ddffd.jpg" alt="Men Ministry">
+                    </div>
+                    <h3>Men</h3>
+                    <p>Building godly men through fellowship, accountability, and practical biblical teaching.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Youth Section -->
+    <section id="youth" class="youth-section">
+        <div class="container">
+            <div class="youth-grid">
+                <div class="youth-content">
+                    <h2>Youths Chill — A Generation on Fire</h2>
+                    <p>Join the most vibrant youth community in Kawanda! Every last Saturday of the month, we gather for interactive sessions, live worship, games, mentorship, and purpose-driven talks. This is where young people discover their identity in Christ and become fearless victors.</p>
+                    <p><strong>Every Last Saturday</strong> | 2:00 PM - 6:00 PM</p>
+                    <p><strong>Location:</strong> Victory Living Word Church, Kawanda</p>
+                    <a href="https://wa.me/256740218296?text=I'm%20interested%20in%20the%20Youth%20Movement!" class="btn btn-outline" target="_blank">Join the Youth Movement</a>
+                </div>
+                <div class="youth-image">
+                    <img src="https://i.pinimg.com/736x/01/3a/c8/013ac8cc64524d97e0e80d31b1575b28.jpg" alt="Youth Event">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-card">
+                <p>"When you pray, you speak to God and not with God — there is a difference. Prayer is communication with heaven, and it changes everything."</p>
+                <footer>— Pastor Kitondekigya Richard, Senior Pastor</footer>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2>Church Life</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 1rem;">
+                Glimpses of our community in worship, fellowship, and service.
+            </p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/1200x/66/3e/14/663e1495a77ec8cbc1f5c467e859f83c.jpg" alt="Sunday Worship">
+                    <div class="gallery-overlay">Sunday Worship Service</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/19/e4/b9/19e4b9d0bac22766d3e42a6525edb9a4.jpg" alt="Praise and Worship">
+                    <div class="gallery-overlay">Praise & Worship Team</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/01/3a/c8/013ac8cc64524d97e0e80d31b1575b28.jpg" alt="Youth Event">
+                    <div class="gallery-overlay">Youths Chill Event</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/42/f1/92/42f1923d74e92071899707bb01801fbd.jpg" alt="Community Outreach">
+                    <div class="gallery-overlay">Community Outreach</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/1200x/8b/16/5b/8b165ba7964b8d781192d428565281ea.jpg" alt="Prayer Service">
+                    <div class="gallery-overlay">Prayer & Intercession</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/1200x/9d/1d/0e/9d1d0e09cf863807bfcb8f1c2303b391.jpg" alt="Church Family">
+                    <div class="gallery-overlay">Church Family Fellowship</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="#contact" class="btn btn-purple">View More Photos</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Support / Contact Section -->
+    <section id="contact" class="support-section">
+        <div class="container">
+            <h2>Connect With Us</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 1rem;">
+                We would love to hear from you. Reach out for prayer, inquiries, or to partner with us.
+            </p>
+            
+            <div class="support-card">
+                <div class="support-grid">
+                    <!-- Call/WhatsApp -->
+                    <div class="support-column">
+                        <div class="support-item">
+                            <div class="support-header">
+                                <div class="support-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <h4>Call / WhatsApp</h4>
+                            </div>
+                            <p class="contact-info">+256740218296</p>
+                            <p style="margin-top: 0.75rem; font-size: 0.9rem;">Available during office hours for prayer requests, counseling, and inquiries.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Location -->
+                    <div class="support-column">
+                        <div class="support-item">
+                            <div class="support-header">
+                                <div class="support-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h4>Location</h4>
+                            </div>
+                            <p class="contact-info">Kawanda, Uganda</p>
+                            <p style="margin-top: 0.75rem; font-size: 0.9rem;">Near the main trading center. All are welcome to visit and worship with us.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="support-column">
+                        <div class="support-item">
+                            <div class="support-header">
+                                <div class="support-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h4>Email</h4>
+                            </div>
+                            <p class="contact-info small">victorylivingword@gmail.com</p>
+                            <p style="margin-top: 0.75rem; font-size: 0.9rem;">For general inquiries, prayer requests, and more information about our ministry programs.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bible-verse-line">
+                    "They overcame him by the blood of the Lamb and by the word of their testimony..." — Revelation 12:11
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Kawanda, Uganda</p>
+                    <p><i class="fas fa-phone"></i> +256740218296</p>
+                    <p><i class="fas fa-envelope"></i> victorylivingword@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Sunday: 7AM - 1PM</p>
+                    <a href="#contact" class="btn btn-outline" style="margin-top: 0.75rem; padding: 0.5rem 1rem; font-size: 0.85rem;">Get Directions</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#ministries">Ministries</a>
+                    <a href="#youth">Youth Ministry</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#contact">Connect</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Service Times</h3>
+                    <p><strong>Sunday Worship:</strong> 7AM - 1PM</p>
+                    <p><strong>Wednesday Bible Study:</strong> 5PM - 7PM</p>
+                    <p><strong>Youths Chill:</strong> Monthly (Last Saturday)</p>
+                    <p><strong>Night of Victory:</strong> Monthly (Announced)</p>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://facebook.com/victorylivingwordchurch" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/victorylivingwordchurch" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://youtube.com/@victorylivingwordchurch" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://wa.me/256740218296" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://tiktok.com/@victorylivingwordchurch" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> Victory Living Word Church — Kawanda, Uganda. All Rights Reserved. | Raising Victors for God's Glory.</p>
+                <p style="margin-top: 4px;">Led by Pastor Kitondekigya Richard & Family | Revelation 12:11</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+        }
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                if (hamburger) {
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                
+                if (targetId.startsWith('#') && targetId !== '#') {
+                    e.preventDefault();
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+                if (hamburger) {
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
